@@ -34,7 +34,12 @@ void	init_stack(t_stack **stack, char **argv, int splitted)
 		}
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
-			exit_error(stack, argv, 0);
+		{
+			if (splitted)
+				exit_error(stack, argv, 0);
+			else
+				exit_error(stack, NULL, 0);
+		}
 		if (duplicate(*stack, (int)number))
 		{
 			if (splitted)
