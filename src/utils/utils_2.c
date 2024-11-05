@@ -61,3 +61,11 @@ void	free_all(t_stack **stack, char **splitted)
 	free_stack(stack);
 	free_split(splitted);
 }
+
+void	check_args(int argc, char *argv[])
+{
+	if (argc < 2)
+		exit(1);
+	if (argc == 2 && argv[1][0] == '\0')
+		exit_error(NULL, NULL, 0);
+}

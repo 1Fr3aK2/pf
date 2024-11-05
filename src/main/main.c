@@ -23,10 +23,7 @@ int	main(int argc, char *argv[])
 	b_stack = NULL;
 	split_argv = NULL;
 	splited = 0;
-	if (argc < 2)
-		exit(1);
-	if (argc == 2 && argv[1][0] == '\0')
-		exit_error(NULL, NULL, 0);
+	check_args(argc, argv);
 	if (argc == 2 && argv[1][0] != '\0')
 	{
 		split_argv = ft_split(argv[1], ' ');

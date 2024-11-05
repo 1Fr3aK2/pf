@@ -80,6 +80,7 @@ int		get_distance(t_stack **a_stack, int nb);
 void	move_to_a_help(t_stack **a_stack, t_stack **b_stack, int index);
 void	free_all(t_stack **stack, char **splitted);
 void	check_mem(t_stack **stack, char **argv, int splitted);
+void	check_args(int argc, char *argv[]);
 
 // stacks
 void	init_stack(t_stack **stack, char **argv, int splited);
