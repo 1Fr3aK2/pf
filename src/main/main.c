@@ -16,12 +16,13 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a_stack;
 	t_stack	*b_stack;
-	int		splited = 0;
+	int		splited;
 	char	**split_argv;
 
 	a_stack = NULL;
 	b_stack = NULL;
 	split_argv = NULL;
+	splited = 0;
 	if (argc < 2)
 		exit(1);
 	if (argc == 2 && argv[1][0] == '\0')
@@ -39,6 +40,5 @@ int	main(int argc, char *argv[])
 	init_stack(&a_stack, argv, splited);
 	if (verify(a_stack) == 1)
 		sort_stacks(&a_stack, &b_stack);
-	free_split(split_argv);
-	free_stack(&a_stack);
+	free_all(&a_stack, split_argv);
 }

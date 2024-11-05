@@ -55,3 +55,9 @@ int	get_distance(t_stack **stack, int nb)
 	}
 	return (distance);
 }
+
+void	free_all(t_stack **stack, char **splitted)
+{
+	free_stack(stack);
+	free_split(splitted);
+}

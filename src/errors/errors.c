@@ -75,3 +75,11 @@ void	exit_error(t_stack **stack, char **split_argv, int flag)
 		free_split(split_argv);
 	exit(1);
 }
+
+void	check_mem(t_stack **stack, char **argv, int splitted)
+{
+	if (splitted)
+		exit_error(stack, argv, 0);
+	else
+		exit_error(stack, NULL, 0);
+}

@@ -26,27 +26,12 @@ void	init_stack(t_stack **stack, char **argv, int splitted)
 	while (argv[i])
 	{
 		if (writing_errors(argv[i]))
-		{
-			if (splitted)
-				exit_error(stack, argv, 0);
-			else
-				exit_error(stack, NULL, 0);
-		}
+			check_mem(stack, argv, splitted);
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
-		{
-			if (splitted)
-				exit_error(stack, argv, 0);
-			else
-				exit_error(stack, NULL, 0);
-		}
+			check_mem(stack, argv, splitted);
 		if (duplicate(*stack, (int)number))
-		{
-			if (splitted)
-				exit_error(stack, argv, 0);
-			else
-				exit_error(stack, NULL, 0);
-		}
+			check_mem(stack, argv, splitted);
 		node = (t_stack *)ft_lstnew(number, &index);
 		if (!node)
 			exit_error(stack, argv, 0);
