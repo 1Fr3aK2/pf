@@ -33,9 +33,9 @@ $(NAME): $(OBJS) $(LIBFT) $(FT_PRINT)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(FT_PRINT)
 	@echo $(NAME) ready!
 
-# Regra para compilar arquivos objeto a partir de arquivos fonte
+# Regra para compilar arquivos objeto a partir de arquivos fonte, cria a pasta para o arq obj se nao existir
 $(OBJ_DIR)/%.o: src/%.c | $(CREATE_DIR)
-	@mkdir -p $(@D)  # Cria o diretório para o arquivo objeto, se não existir
+	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(CREATE_DIR):
