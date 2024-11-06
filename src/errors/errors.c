@@ -78,7 +78,7 @@ void	exit_error(t_stack **stack, char **split_argv, int flag)
 
 void	check_mem(t_stack **stack, char **argv, int splitted)
 {
-	if (splitted)
+	if (splitted == 1)
 		exit_error(stack, argv, 0);
 	else
 		exit_error(stack, NULL, 0);
